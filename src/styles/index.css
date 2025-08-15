@@ -9,3 +9,71 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+  background-color: #efeeec;
+  background-image: url("../img/phone.png");
+  background-size: contain; /* 👈 Ajusta para que se vea entera */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* opcional */
+  height: 100vh;
+}
+.titulo {
+  color: 302f2c;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 90px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.prueba {
+  color: #302f2c;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 90px;
+  font-family: "Fuzzy Bubbles";
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}
+.task-style .delete-btn {
+  display: none;
+}
+
+.task-style:hover .delete-btn {
+  display: inline-block;
+  color: red;
+}
+.input-style {
+  width: 30%;
+  max-width: 30vh;
+  height: 50px;
+  border-radius: 16px;
+  border: 1px solid #efede3;
+  padding-left: 10px;
+  background-color: #efede360;
+  color: #302f2c;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.task-style {
+  width: 35%;
+  max-width: 36vh;
+  border: #cccccc3d 1px solid;
+  border-radius: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-all:hover {
+  color: red;
+}
