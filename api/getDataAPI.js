@@ -2,15 +2,19 @@ const base_url = "https://playground.4geeks.com/todo";
 const user = "Cris";
 
 // Leer datos del usuario
-
 const getData = async (user) => {
   const response = await fetch(`${base_url}/users/${user}`);
+
+  // Si la respuesta no es 200 (ok), lanzamos un error
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
   const data = await response.json();
   return data.todos;
 };
 
 //Añadir tareas
-
 const postData = async (task) => {
   const response = await fetch(`${base_url}/todos/${user}`, {
     method: "POST",

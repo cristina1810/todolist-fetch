@@ -16,8 +16,21 @@ const Home = () => {
   const [tasks, setTasks] = useState([]);
   //Llamada a la API para obtener las tareas
   const fetchTasks = async () => {
-    const data = await getData(user);
-    setTasks(data);
+    try {
+      const data = await getData(user);
+      setTasks(data);
+    } catch (error) {
+      // Si la llamada falla, intentamos crear el usuario
+      console.error("Error al obtener las tareas. Creando usuario...");
+      try {
+        await postUser(user);
+        // Volvemos a llamar a getData después de crear el usuario
+        const data = await getData(user);
+        setTasks(data);
+      } catch (postError) {
+        console.error("Error al crear el usuario:", postError);
+      }
+    }
   };
 
   const addNewTask = (task) => {
